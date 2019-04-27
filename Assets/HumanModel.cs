@@ -5,23 +5,32 @@ using Microsoft.MixedReality.Toolkit.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HumanModel : MonoBehaviour, IMixedRealityTouchHandler
 {
     // Start is called before the first frame update
     private Interactable routedTarget;
 
+    [Header("Events")]
+    public UnityEvent TouchBegin;
+    public UnityEvent TouchEnd;
+    public UnityEvent ButtonPressed;
+    public UnityEvent ButtonReleased;
+
     public void OnTouchCompleted(HandTrackingInputEventData eventData)
     {
-        Debug.Log("Touch Completed");
+        ButtonReleased.Invoke();
     }
 
     public void OnTouchStarted(HandTrackingInputEventData eventData)
     {
+        //ButtonPressed.Invoke();
     }
 
     public void OnTouchUpdated(HandTrackingInputEventData eventData)
     {
+        //ButtonPressed.Invoke();
     }
 
     private void Awake()
@@ -30,7 +39,6 @@ public class HumanModel : MonoBehaviour, IMixedRealityTouchHandler
     }
     void Start()
     {
-        var physicalPressevnthndlr = GetComponent<PhysicalPressEventRouter>();
         
     }
 
@@ -40,5 +48,11 @@ public class HumanModel : MonoBehaviour, IMixedRealityTouchHandler
 
 
     }
-    
+
+
+    public void HandleButtonPressed()
+    {
+        Debug.Log("Button Pressed");
+    }
+   
 }

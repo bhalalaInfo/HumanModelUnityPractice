@@ -280,7 +280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443440574}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.21999991, z: 3.5699997}
+  m_LocalPosition: {x: 0, y: -0.95, z: 2.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1578286879}
@@ -325,7 +325,7 @@ Camera:
   m_GameObject: {fileID: 534669902}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
@@ -604,11 +604,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localForward: {x: 0, y: 0, z: 1}
   localUp: {x: 0, y: 1, z: 0}
-  localCenter: {x: 0, y: 0.87, z: 0.5}
+  localCenter: {x: 0, y: 0, z: 0}
   eventsToReceive: 0
   touchableSurface: 0
-  bounds: {x: 1, y: 2.12}
-  touchableCollider: {fileID: 550522753}
+  bounds: {x: 0, y: 0}
+  touchableCollider: {fileID: 0}
 --- !u!114 &550522756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,6 +667,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 550522754}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   ButtonReleased:

@@ -10,7 +10,7 @@ using UnityEngine.Events;
 public class HumanModel : MonoBehaviour, IMixedRealityTouchHandler
 {
     // Start is called before the first frame update
-    private Interactable routedTarget;
+   private Interactable routedTarget;
 
     [Header("Events")]
     public UnityEvent TouchBegin;
@@ -39,14 +39,19 @@ public class HumanModel : MonoBehaviour, IMixedRealityTouchHandler
     }
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        RaycastHit hitInfo;
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, 2.0f, Physics.DefaultRaycastLayers))
+        {
+            Debug.Log(hitInfo.collider.gameObject);
 
+        }
     }
 
 
@@ -54,5 +59,8 @@ public class HumanModel : MonoBehaviour, IMixedRealityTouchHandler
     {
         Debug.Log("Button Pressed");
     }
-   
+    public void HandleButtonReleased()
+    {
+        Debug.Log("Button Released");
+    }
 }
